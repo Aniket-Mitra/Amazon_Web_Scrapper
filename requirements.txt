@@ -3,3 +3,4 @@ streamlit_js_eval
 pandas
 selenium
 beautifulsoup4
+webdriver-manager
