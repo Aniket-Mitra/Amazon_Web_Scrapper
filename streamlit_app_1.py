@@ -62,8 +62,8 @@ if st.session_state.setup_complete and not st.session_state.chat_complete:
         time.sleep(5)
         #html_doc = driver.page_source
         driver.quit()
-        soup = BeautifulSoup(html_doc, "html.parser")
-        return soup.get_text()
+        #soup = BeautifulSoup(html_doc, "html.parser")
+        #return soup.get_text()
     except Exception as e:
         st.write(f"DEBUG:INIT_DRIVER:ERROR:{e}")
     finally:
