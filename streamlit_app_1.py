@@ -35,7 +35,10 @@ if not st.session_state.setup_complete:
         st.write("Setup complete. Starting scrapping reviews...")
 
 if st.session_state.setup_complete and not st.session_state.chat_complete:
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument('--headless')
+    options.add_argument('--disable-gpu')
+    driver = webdriver.Chrome(options=options)
     #driver.get("https://www.amazon.in/Apple-iPhone-15-128-GB/dp/B0CHX2F5QT")
     driver.get(st.session_state["url"])
 
