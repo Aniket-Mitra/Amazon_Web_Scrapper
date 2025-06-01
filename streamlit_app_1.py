@@ -57,7 +57,7 @@ if st.session_state.setup_complete and not st.session_state.chat_complete:
     #                             options=options)
     #driver = webdriver.Chrome(service=service, options=chrome_options)
     driver = uc.Chrome(
-                #headless=True,
+                headless=True,
                 use_subprocess=True,
                 version_main=137  # Matches Chrome on Streamlit Cloud
             )
