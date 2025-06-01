@@ -47,7 +47,7 @@ if st.session_state.setup_complete and not st.session_state.chat_complete:
                                   options=options)
     #driver.get("https://www.amazon.in/Apple-iPhone-15-128-GB/dp/B0CHX2F5QT")
     driver.get(st.session_state["url"])"""
-    driver=requests.get("https://example.com")
+    driver=requests.get(st.session_state["url"])
     """
     driver = None
     try:
