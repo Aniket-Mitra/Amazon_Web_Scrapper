@@ -43,17 +43,24 @@ if st.session_state.setup_complete and not st.session_state.chat_complete:
     #options.add_argument('--headless')
     #options.add_argument('--disable-gpu')
     #driver = webdriver.Chrome(options=options)
-    chrome_options = uc.ChromeOptions()
-    chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--no-sandbox")
+    #chrome_options = uc.Chrome(headless=True,use_subprocess=True,
+    #version_main=137,  # Match Chrome 137 on Streamlit Cloud                         )
+    
+    #chrome_options.add_argument("--headless")
+    #chrome_options.add_argument("--disable-dev-shm-usage")
+    #chrome_options.add_argument("--no-sandbox")
     #chrome_options.binary_location = "/usr/bin/chromium-browser"
 
     chrome_options.binary_location = "/usr/bin/google-chrome"
     service = Service("/usr/bin/chromedriver")
     #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
     #                             options=options)
-    driver = webdriver.Chrome(service=service, options=chrome_options)
+    #driver = webdriver.Chrome(service=service, options=chrome_options)
+    driver = uc.Chrome(
+                headless=True,
+                use_subprocess=True,
+                version_main=137  # Matches Chrome on Streamlit Cloud
+            )
     #driver.get("https://www.amazon.in/Apple-iPhone-15-128-GB/dp/B0CHX2F5QT")
     driver.get(st.session_state["url"])
     #driver=requests.get(st.session_state["url"])
