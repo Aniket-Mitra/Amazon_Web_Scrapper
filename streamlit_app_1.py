@@ -37,7 +37,7 @@ if not st.session_state.setup_complete:
         st.write("Setup complete. Starting scrapping reviews...")
 
 if st.session_state.setup_complete and not st.session_state.chat_complete:
-    """
+    
     #options = webdriver.ChromeOptions()
     #options.add_argument('--headless')
     #options.add_argument('--disable-gpu')
@@ -54,9 +54,9 @@ if st.session_state.setup_complete and not st.session_state.chat_complete:
     #                             options=options)
     driver = webdriver.Chrome(service=service, options=chrome_options)
     #driver.get("https://www.amazon.in/Apple-iPhone-15-128-GB/dp/B0CHX2F5QT")
-    driver.get(st.session_state["url"])"""
+    driver.get(st.session_state["url"])
     #driver=requests.get(st.session_state["url"])
-    
+    """
     driver = None
     try:
         # Using on Local
@@ -77,7 +77,7 @@ if st.session_state.setup_complete and not st.session_state.chat_complete:
     except Exception as e:
         st.write(f"DEBUG:INIT_DRIVER:ERROR:{e}")
     finally:
-        if driver is not None: driver.quit()
+        if driver is not None: driver.quit()"""
 
     time.sleep(70)
 
