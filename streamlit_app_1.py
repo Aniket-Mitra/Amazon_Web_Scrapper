@@ -38,12 +38,12 @@ if not st.session_state.setup_complete:
 
 if st.session_state.setup_complete and not st.session_state.chat_complete:
     """
-    options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
-    options.add_argument('--disable-gpu')
+    #options = webdriver.ChromeOptions()
+    #options.add_argument('--headless')
+    #options.add_argument('--disable-gpu')
     #driver = webdriver.Chrome(options=options)
     chrome_options = Options()
-    #chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.binary_location = "/usr/bin/chromium-browser"
