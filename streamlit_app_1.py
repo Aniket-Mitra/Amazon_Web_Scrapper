@@ -43,7 +43,7 @@ if st.session_state.setup_complete and not st.session_state.chat_complete:
     #options.add_argument('--headless')
     #options.add_argument('--disable-gpu')
     #driver = webdriver.Chrome(options=options)
-    chrome_options = uc.Options()
+    chrome_options = uc.ChromeOptions()
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--no-sandbox")
