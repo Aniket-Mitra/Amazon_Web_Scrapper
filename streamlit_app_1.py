@@ -156,7 +156,7 @@ if st.session_state.chat_complete:
   st.success(f"Scraping complete. File saved as {output_file}")
   st.download_button(
     label="Download CSV",
-    data=df.to_csv(index=False),
+    data=df.to_csv(output_file,index=False),
     file_name=output_file,
     mime="text/csv"
 )
