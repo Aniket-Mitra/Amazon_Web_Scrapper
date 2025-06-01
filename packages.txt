@@ -1,3 +1,6 @@
 chromium
 chromium-driver
 google-chrome-stable
+wget
+unzip
+curl
