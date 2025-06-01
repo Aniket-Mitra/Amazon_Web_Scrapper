@@ -51,8 +51,8 @@ if st.session_state.setup_complete and not st.session_state.chat_complete:
     #chrome_options.add_argument("--no-sandbox")
     #chrome_options.binary_location = "/usr/bin/chromium-browser"
 
-    chrome_options.binary_location = "/usr/bin/google-chrome"
-    service = Service("/usr/bin/chromedriver")
+    #chrome_options.binary_location = "/usr/bin/google-chrome"
+    #service = Service("/usr/bin/chromedriver")
     #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
     #                             options=options)
     #driver = webdriver.Chrome(service=service, options=chrome_options)
