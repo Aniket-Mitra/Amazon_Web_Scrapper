@@ -4,3 +4,4 @@ pandas
 selenium
 beautifulsoup4
 webdriver-manager
+google-chrome-stable
