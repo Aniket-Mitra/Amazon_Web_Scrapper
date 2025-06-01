@@ -60,7 +60,7 @@ if st.session_state.setup_complete and not st.session_state.chat_complete:
                                   options=options)
         #st.write(f"DEBUG:DRIVER:{driver}")
         driver.get(st.session_state["url"])
-        res = requests.get("https://example.com")
+        #res = requests.get("https://example.com")
         time.sleep(5)
         #html_doc = driver.page_source
         #driver.quit()
@@ -80,8 +80,8 @@ if st.session_state.setup_complete and not st.session_state.chat_complete:
       #WebDriverWait(driver, 15).until(
       #EC.presence_of_element_located((By.XPATH, '//div[@data-hook="review"]'))
       #)
-      #soup = BeautifulSoup(driver.page_source, 'html.parser')
-      soup = BeautifulSoup(driver.text, 'html.parser')
+      soup = BeautifulSoup(driver.page_source, 'html.parser')
+      #soup = BeautifulSoup(driver.text, 'html.parser')
       reviews = soup.find_all("div", {"id": "cm_cr-review_list"})
       #reviews=soup.find_all("div",{"class":"a-section a-spacing-none reviews-content a-size-       base"})
       #print(reviews)
