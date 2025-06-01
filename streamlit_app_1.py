@@ -15,6 +15,7 @@ from selenium.common.exceptions import NoSuchElementException
 from bs4 import BeautifulSoup
 import time
 import pandas as pd
+import requests
 
 
 if "setup_complete" not in st.session_state:
@@ -46,8 +47,8 @@ if st.session_state.setup_complete and not st.session_state.chat_complete:
                                   options=options)
     #driver.get("https://www.amazon.in/Apple-iPhone-15-128-GB/dp/B0CHX2F5QT")
     driver.get(st.session_state["url"])"""
-
-
+    driver=requests.get("https://example.com")
+    """
     driver = None
     try:
         # Using on Local
@@ -59,15 +60,16 @@ if st.session_state.setup_complete and not st.session_state.chat_complete:
                                   options=options)
         #st.write(f"DEBUG:DRIVER:{driver}")
         driver.get(st.session_state["url"])
+        res = requests.get("https://example.com")
         time.sleep(5)
         #html_doc = driver.page_source
-        driver.quit()
+        #driver.quit()
         #soup = BeautifulSoup(html_doc, "html.parser")
         #return soup.get_text()
     except Exception as e:
         st.write(f"DEBUG:INIT_DRIVER:ERROR:{e}")
     finally:
-        if driver is not None: driver.quit()
+        if driver is not None: driver.quit()"""
 
     time.sleep(70)
 
@@ -78,7 +80,8 @@ if st.session_state.setup_complete and not st.session_state.chat_complete:
       #WebDriverWait(driver, 15).until(
       #EC.presence_of_element_located((By.XPATH, '//div[@data-hook="review"]'))
       #)
-      soup = BeautifulSoup(driver.page_source, 'html.parser')
+      #soup = BeautifulSoup(driver.page_source, 'html.parser')
+      soup = BeautifulSoup(driver.text, 'html.parser')
       reviews = soup.find_all("div", {"id": "cm_cr-review_list"})
       #reviews=soup.find_all("div",{"class":"a-section a-spacing-none reviews-content a-size-       base"})
       #print(reviews)
