@@ -1,5 +1,5 @@
 import streamlit as st
-#from streamlit_js_eval import streamlit_js_eval
+from streamlit_js_eval import streamlit_js_eval
 
 
 st.set_page_config(page_title="Web Scraper", page_icon="💬")
