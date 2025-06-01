@@ -151,5 +151,14 @@ if st.session_state.setup_complete and not st.session_state.chat_complete:
 
 if st.session_state.chat_complete:
   st.write("Scraping Complete")
+  df.to_csv(output_file, index=False)
+
+  st.success(f"Scraping complete. File saved as {output_file}")
+  st.download_button(
+    label="Download CSV",
+    data=df.to_csv(index=False),
+    file_name=output_file,
+    mime="text/csv"
+)
   if st.button("Restart Scraping", type="primary"):
             streamlit_js_eval(js_expressions="parent.window.location.reload()")
