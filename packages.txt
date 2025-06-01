@@ -4,3 +4,6 @@ google-chrome-stable
 wget
 unzip
 curl
+libxml2-dev
+libxslt-dev
+
